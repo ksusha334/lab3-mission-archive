@@ -4,23 +4,24 @@
  */
 package com.mycompany.missionarchive.entity;
 import javax.persistence.*;
-
 /**
  *
  * @author march
  */
 @Entity
-@Table(name = "curses")
-public class CurseEntity {
+@Table(name = "techniques")
+public class TechniqueEntity {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
     private String name;
-    private String threatLevel;
+    private String type;
+    private String owner;
+    private long damage;
     
-    public CurseEntity() {}
+    public TechniqueEntity() {}
     
     public Long getId() {
         return id;
@@ -38,11 +39,27 @@ public class CurseEntity {
         this.name = name;
     }
     
-    public String getThreatLevel() {
-        return threatLevel;
+    public String getType() {
+        return type;
     }
     
-    public void setThreatLevel(String threatLevel) {
-        this.threatLevel = threatLevel;
+    public void setType(String type) {
+        this.type = type;
+    }
+    
+    public String getOwner() {
+        return owner;
+    }
+    
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
+    
+    public long getDamage() {
+        return damage;
+    }
+    
+    public void setDamage(long damage) {
+        this.damage = damage;
     }
 }

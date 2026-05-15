@@ -2,11 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.missionanalyze.parser;
+package com.mycompany.missionarchive.parser;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.mycompany.missionanalyze.model.Mission;
+import com.mycompany.missionarchive.model.Mission;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
-import com.mycompany.missionanalyze.builder.MissionBuilderImpl;
+import com.mycompany.missionarchive.builder.MissionBuilderImpl;
 import java.io.File;
 
 /**

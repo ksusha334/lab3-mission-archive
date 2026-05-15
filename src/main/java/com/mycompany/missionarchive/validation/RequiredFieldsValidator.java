@@ -2,10 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.missionanalyze.validation;
+package com.mycompany.missionarchive.validation;
 
-import com.mycompany.missionanalyze.model.Curse;
-import com.mycompany.missionanalyze.model.Mission;
+import com.mycompany.missionarchive.model.Curse;
+import com.mycompany.missionarchive.model.Mission;
 import java.util.ArrayList;
 import java.util.List;
 

@@ -3,14 +3,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 
-package com.mycompany.missionanalyze.parser;
+package com.mycompany.missionarchive.parser;
 
-import com.mycompany.missionanalyze.builder.MissionBuilder;
-import com.mycompany.missionanalyze.builder.MissionBuilderImpl;
-import com.mycompany.missionanalyze.model.Mission;
-import com.mycompany.missionanalyze.model.Curse;
-import com.mycompany.missionanalyze.model.Sorcerer;
-import com.mycompany.missionanalyze.model.Technique;
+import com.mycompany.missionarchive.builder.MissionBuilder;
+import com.mycompany.missionarchive.builder.MissionBuilderImpl;
+import com.mycompany.missionarchive.model.Mission;
+import com.mycompany.missionarchive.model.Curse;
+import com.mycompany.missionarchive.model.Sorcerer;
+import com.mycompany.missionarchive.model.Technique;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;

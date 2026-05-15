@@ -2,12 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
  */
-package com.mycompany.missionanalyze.builder;
+package com.mycompany.missionarchive.builder;
 
-import com.mycompany.missionanalyze.model.Curse;
-import com.mycompany.missionanalyze.model.Mission;
-import com.mycompany.missionanalyze.model.Sorcerer;
-import com.mycompany.missionanalyze.model.Technique;
+import com.mycompany.missionarchive.model.Curse;
+import com.mycompany.missionarchive.model.Mission;
+import com.mycompany.missionarchive.model.Sorcerer;
+import com.mycompany.missionarchive.model.Technique;
 
 /**
  *
