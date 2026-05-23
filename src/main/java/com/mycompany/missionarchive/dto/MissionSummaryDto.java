@@ -16,6 +16,7 @@ public class MissionSummaryDto {
     private String location;
     private String outcome;
     private long damageCost;
+    private String comment;
     
     public MissionSummaryDto() {}
     
@@ -65,5 +66,13 @@ public class MissionSummaryDto {
     
     public void setDamageCost(long damageCost) {
         this.damageCost = damageCost;
+    }
+    
+    public String getComment() {
+        return comment;
+    }
+    
+    public void setComment(String comment) {
+        this.comment = comment;
     }
 }

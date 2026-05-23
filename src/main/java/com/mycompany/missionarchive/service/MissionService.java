@@ -83,7 +83,5 @@ public class MissionService {
     
     public MissionEntity getById(Long id) {
         return repository.findById(id).orElse(null);
-    }
-        
-        
+    }       
 }

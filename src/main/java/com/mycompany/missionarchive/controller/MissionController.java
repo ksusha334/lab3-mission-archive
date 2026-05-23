@@ -56,7 +56,7 @@ public class MissionController {
     @GetMapping("/{id}/report")
     public String getReport(
             @Parameter(description = "ID миссии") @PathVariable Long id,
-            @Parameter(description = "Тип отчёта: simple или detailed")
+            @Parameter(description = "Тип отчёта", schema = @Schema(allowableValues = {"simple", "detailed"}))
             @RequestParam(defaultValue = "simple") String type) {
         return missionService.generateReport(id, type);
     }

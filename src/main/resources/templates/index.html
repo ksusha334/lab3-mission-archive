@@ -24,7 +24,6 @@
             margin: 0 auto;
         }
 
-        /* Заголовок */
         .header {
             text-align: center;
             margin-bottom: 35px;
@@ -43,7 +42,6 @@
             font-size: 14px;
         }
 
-        /* Карточки */
         .card {
             background: white;
             border-radius: 16px;
@@ -67,7 +65,6 @@
             border-bottom: 2px solid #eef2f6;
         }
 
-        /* Форма загрузки */
         .upload-area {
             display: flex;
             flex-wrap: wrap;
@@ -154,7 +151,6 @@
             border: 1px solid #f5cfc9;
         }
 
-        /* Таблица */
         .table-wrapper {
             overflow-x: auto;
         }
@@ -193,6 +189,15 @@
             color: #2c5a74;
         }
 
+        .comment-cell {
+            max-width: 200px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: #5a7c92;
+            font-style: italic;
+        }
+
         .action-buttons {
             display: flex;
             gap: 8px;
@@ -217,7 +222,6 @@
             border-color: #cbd6e4;
         }
 
-        /* Отчёт */
         .report-content {
             background: #fafcff;
             border-radius: 14px;
@@ -239,7 +243,6 @@
             font-size: 14px;
         }
 
-        /* Футер */
         .footer {
             text-align: center;
             margin-top: 30px;
@@ -297,12 +300,13 @@
                     <th>Место</th>
                     <th>Результат</th>
                     <th>Ущерб</th>
+                    <th>Комментарий</th>
                     <th>Действия</th>
                 </tr>
                 </thead>
                 <tbody id="missionsTableBody">
                 <tr class="empty-state-row">
-                    <td colspan="6" class="empty-state">Нет загруженных миссий</td>
+                    <td colspan="7" class="empty-state">Нет загруженных миссий</td>
                 </tr>
                 </tbody>
             </table>
@@ -364,7 +368,7 @@
             const missions = await response.json();
 
             if (!missions || missions.length === 0) {
-                missionsTableBody.innerHTML = '<tr class="empty-state-row"><td colspan="6" class="empty-state">Нет загруженных миссий</td></tr>';
+                missionsTableBody.innerHTML = '<tr class="empty-state-row"><td colspan="7" class="empty-state">Нет загруженных миссий</td></tr>';
                 missionsCountSpan.textContent = '0 записей';
                 return;
             }
@@ -380,7 +384,14 @@
                 row.insertCell(3).innerHTML = getOutcomeBadge(mission.outcome);
                 row.insertCell(4).innerText = formatNumber(mission.damageCost);
                 
-                const actionsCell = row.insertCell(5);
+                // Ячейка с комментарием
+                const commentText = mission.comment || '—';
+                const commentCell = row.insertCell(5);
+                commentCell.className = 'comment-cell';
+                commentCell.title = commentText; // подсказка при наведении
+                commentCell.innerText = commentText.length > 30 ? commentText.substring(0, 30) + '...' : commentText;
+                
+                const actionsCell = row.insertCell(6);
                 actionsCell.className = 'action-buttons';
                 
                 const simpleBtn = document.createElement('button');
@@ -398,7 +409,7 @@
             });
         } catch (error) {
             console.error(error);
-            missionsTableBody.innerHTML = '<tr class="empty-state-row"><td colspan="6" class="empty-state">Ошибка загрузки списка</td></tr>';
+            missionsTableBody.innerHTML = '<tr class="empty-state-row"><td colspan="7" class="empty-state">Ошибка загрузки списка</td></tr>';
         }
     }
 

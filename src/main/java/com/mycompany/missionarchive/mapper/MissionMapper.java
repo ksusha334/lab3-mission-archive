@@ -5,6 +5,7 @@
 package com.mycompany.missionarchive.mapper;
 
 import com.mycompany.missionarchive.dto.MissionSummaryDto;
+import com.mycompany.missionarchive.entity.CurseEntity;
 import com.mycompany.missionarchive.entity.MissionEntity;
 import com.mycompany.missionarchive.entity.SorcererEntity;
 import com.mycompany.missionarchive.entity.TechniqueEntity;
@@ -31,6 +32,7 @@ public class MissionMapper {
         dto.setLocation(entity.getLocation());
         dto.setOutcome(entity.getOutcome());
         dto.setDamageCost(entity.getDamageCost());
+        dto.setComment(entity.getComment());
         return dto;
     }
     
@@ -60,8 +62,7 @@ public class MissionMapper {
         entity.setComment(mission.getComment());
         
         if (mission.getCurse() != null) {
-            com.mycompany.missionarchive.entity.CurseEntity curseEntity = 
-                new com.mycompany.missionarchive.entity.CurseEntity();
+            CurseEntity curseEntity = new CurseEntity();
             curseEntity.setName(mission.getCurse().getName());
             curseEntity.setThreatLevel(mission.getCurse().getThreatLevel());
             entity.setCurse(curseEntity);
